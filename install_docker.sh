@@ -25,12 +25,9 @@ sudo apt install docker-ce docker-ce-cli containerd.io docker-compose-plugin -y
 # add regular user to docker group (so we can run docker without sudo)
 sudo usermod -aG docker $USER
 
-# update changes to group memberships (logging out and back in work better for group update)
-su - ${USER}
+# test docker operability as superuser
+sudo docker run hello-world
 
-# test docker operability as regular user
-docker run hello-world
-
-# helpful information
+# helpful information to ensure docker can be run without sudo
 printf '\n[+] If the docker hello-world container ran correctly above, it is installed properly!\n'
 printf '\n[!] Log out and back in again to ensure docker group memberships are fully updated.'
