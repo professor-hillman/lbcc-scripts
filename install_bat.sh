@@ -8,22 +8,8 @@ sudo apt update
 sudo apt install bat -y
 
 # configure alias to run with bat instead of batcat (for zsh)
-echo "alias bat=batcat" >> ~/.zsh_aliases
-
-# initialize alias updates
-source ~/.zshrc
-
-# create heredoc test script
-cat << EOF > hello.py
-#!/usr/bin/env python3
-print('Batcat installed correctly!)
-EOF
-
-# test bat install and alias
-bat hello.py
-
-# remove test script
-rm hello.py
+echo "" >> ~/.zshrc
+echo "alias bat='batcat'" >> ~/.zshrc
 
 # provide feedback
-printf '\n[+] If the short Python script above has syntax highlighting, bat is installed properly!'
+printf '\n[+] Please close your terminal window and reopen it to update changes!'
