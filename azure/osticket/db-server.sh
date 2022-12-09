@@ -13,6 +13,9 @@ sudo apt update
 # upgrade installed packages
 sudo apt upgrade -y
 
+# install mysql-server
+sudo apt install -y mysql-server
+
 # mysql_secure install / change to native password auth / osticket database setup
 sudo mysql << EOF
 ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '${MYSQL_ROOT_PASS}';
